@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*contact page design*/
+.bg-primary{
+   background-color: yellow!important; 
+}
+.form-control{
+    height: 36px;
+    background:none;
+    color:black;
+    border-radius: 2px;
+    box-shadow:none!important;
+    border: 2px solid black ;
+}
+.contactform .form-control{
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0;
+}
+.form-control:focus, .form-control:active{
+    border-color: yellow!important;
+}
+ 
+

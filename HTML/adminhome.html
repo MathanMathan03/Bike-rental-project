@@ -1,0 +1,303 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adminpage</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+     /* bookings design */
+      #dummy{
+      width: 500px;
+      height: 310px;
+      background-color:antiquewhite ;
+      line-height:60px;
+      font-size: larger;
+      font-weight: bolder;
+      margin-top: 70px;
+    }
+</style>
+<body>
+    <div>
+       <div class="row" style="height: 15%; background-color: rgb(44, 137, 163);">
+        <div class="col-2"><img src="/IMAGE/logo img/logo_head-transformed.webp" style="height: 95px;width: 100px;" alt="logo"></div>
+        <div class="col-4 mt-5"> <p class="d-inline-flex gap-1">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#workersform" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="workbutton()">
+              Workers Form
+            </a>
+        </p></div>
+        <div class="col-4 mt-5"><p class="d-inline-flex gap-1">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#bookings" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="alldata()">
+              Bookings
+            </a>
+        </p></div>
+        <div class="col-2 mt-5"><p class="d-inline-flex gap-1">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#salary" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Salary
+            </a>
+        </p></div>
+
+      <!-- bookings id  -->
+        <div id="fill" style="visibility: hidden;"></div>
+
+
+
+    </div>
+       <div class="row" style="height: 75%;">
+       
+           
+          <div class="collapse" id="workersform">
+            <div class="card card-body">
+                <form class="row g-3">
+                    <div class="col-12">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cpassword" class="form-label">Confirm Password</label>
+                      <input type="password" class="form-control" id="cpassword" onkeyup="confirmpassword()">
+                    </div>
+                    <div class="col-12">
+                      <label for="workerid" class="form-label">Worker Id</label>
+                      <input type="text" class="form-control" id="workerid" placeholder="Create worker id">
+                    </div>
+                    <div class="col-12">
+                      <label for="phone" class="form-label">Phone Number</label>
+                      <input type="text" class="form-control" id="phone" placeholder="Mobile no">
+                    </div>
+                    <div class="col-12">
+                      <label for="name" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Create full name">
+                    </div>
+                    <div class="col-12">
+                      <label for="address" class="form-label">Address </label>
+                      <input type="text" class="form-control" id="address" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="city" class="form-label">City</label>
+                      <input type="text" class="form-control" id="city">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputState" class="form-label">State</label>
+                      <select id="state" class="form-select">
+                        <option selected>Choose...</option>
+                        <option value="Andra Pradesh">Andra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madya Pradesh">Madya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadeep">Lakshadeep</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                      <label for="inputZip" class="form-label">Pin Code</label>
+                      <input type="text" class="form-control" id="pincode">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                          <a href="#" style="text-decoration: none;">Accepct MA Bikers Terms</a>
+                        </label>
+                      </div>
+                    </div>
+                    
+                  </form>
+             
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" id="work" onclick="addworker()" style="justify-content: center;visibility: hidden;" >Add Worker</button>
+              <button class="btn btn-primary" id="work" onclick="sendworkerdetaills()" style="justify-content: center;visibility: hidden;" >Send details</button>
+            </div>
+
+          <!-- <div class="collapse" id="bookings">
+            <div class="card card-body">
+             adfdgf
+            </div>
+          <div class="collapse" id="salary">
+            <div class="card card-body">
+             srt
+            </div>
+          </div>   -->
+         
+    </div>
+   
+       <div class="row" style="height: 10%; background-color: rgb(255, 255, 255);">
+        </div>
+    </div>
+
+
+    
+
+
+    <script>
+
+     function workbutton(){
+
+      if( document.getElementById("work").style.visibility=='hidden'){
+        document.getElementById('work').style.visibility='visible'
+      }
+      else {
+        document.getElementById('work').style.visibility='hidden';
+      }
+     
+     }
+         
+
+function confirmpassword(){
+  var password = document.getElementById("password");
+  var cpassword = document.getElementById("cpassword");
+  if (password.value == cpassword.value) {
+    alert('Password match');
+    }
+}
+
+
+
+
+      function getinput(){
+        var email=document.getElementById('email').value;
+        var password=document.getElementById('cpassword').value;
+        var workerid=document.getElementById('workerid').value;
+        var name=document.getElementById('name').value;
+        var phone=document.getElementById('phone').value;
+        var address=document.getElementById('address').value;
+        var city=document.getElementById('city').value;
+        var state=document.getElementById('state').value;
+        var pincode=document.getElementById('pincode').value;
+
+
+        return {
+          'email':email,
+          'password':password,
+          'workerid':workerid,
+          'name':name,
+          'phone':phone,
+          'address':address,
+          'city':city,
+          'state':state,
+          'pincode':pincode
+        }
+      }
+
+      function addworker(){
+        var email=document.getElementById('email').value;
+        var password=document.getElementById('cpassword').value;
+        var workerid=document.getElementById('workerid').value;
+        var name=document.getElementById('name').value;
+        var phone=document.getElementById('phone').value;
+        var address=document.getElementById('address').value;
+        var city=document.getElementById('city').value;
+        var state=document.getElementById('state').value;
+        var pincode=document.getElementById('pincode').value;
+       
+
+        
+        var apiiurl='https://retoolapi.dev/F2DJej/worker'
+        fetch(apiiurl,{
+          method:'POST',
+          body:JSON.stringify(getinput()),
+          headers:{
+            "Content-Type":"application/json",
+          }
+
+
+        }).then((response)=>{
+          if (response.ok){
+            
+        Email.send({
+            SecureToken: "f95d0d49-b52e-4dc6-b144-d6f8ad8d3264",
+            To: email,
+            From: "mathankumar936131@gmail.com",
+            Subject: "Worker Invidation",
+            Body: 'Dear '+name+'  We are excited to welcome you to the MA BIKERS team! As a new member of our organization, you will need to access our internal systems.Please find below your login credentials:Worker ID: ['+workerid+'] Password: ['+password+']Upon logging in for the Every time, you will be prompted to change your password to something more secure. Please keep this information confidential to ensure the security of your account.If you have any questions or need assistance during the onboarding process, feel free to reach out to our HR department .We look forward to your contributions to the MA BIKERS family.Best regards, '
+        }).then(
+            message => alert(message)
+        );
+           
+
+          }
+          else{
+            throw new Error ("Error")
+            }
+
+        })
+      }
+
+        function alldata(){
+
+          if(document.getElementById('fill').style.visibility=='hidden'){
+        document.getElementById('fill').style.visibility='visible'
+      }else{
+        document.getElementById('fill').style.visibility='hidden'
+      }
+
+          var alldetails='https://retoolapi.dev/jmFjL0/service';
+            fetch(alldetails)
+            .then((Response)=>{
+                if(Response.ok){
+                    return Response.json(); 
+                }else{
+                    throw new Error('not response')
+                }
+            }).then((data)=>correct(data))
+              .catch((err)=>{
+                console.log('ERROR:'+err.message);
+              })
+            }
+              function correct(data){
+                let result='';
+               //console.log(data)
+               for(let x of data){
+              var  mail=x.email;
+              var  product=x.product;
+              var  stdate=x.startdate;
+              var  eddate=x.enddate;
+              //var fulldata=mail+product+stdate+eddate
+               // console.log(fulldata);
+               result+='<div class="container" id="dummy"><div class="row"><hr><div class="col ms-4">Email:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+mail+'</span></div><hr></div><div class="row"><div class="col ms-4">Product:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+product+'</span></div><hr></div><div class="row"><div class="col ms-4">StartDate:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+stdate+'</span></div><hr></div><div class="row"><div class="col ms-4">Enddate:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+eddate+'</span></div><hr></div></div>'
+               }
+                document.getElementById('fill').innerHTML=result;
+        }
+
+    </script>
+    
+</body>
+</html>

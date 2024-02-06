@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+</head>
+<body>
+
+               <!--Index navbar-->
+
+               <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 fixed-top" style="opacity: 90%;">
+                <div class="container-fluid">
+                  <a class="navbar-brand " style="font-size: 30px;" href="#"><h4>MA Bikers</h4></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item ms-4">
+                        <a class="nav-link active" aria-current="page" href="/HTML/index.html">Home</a>
+                      </li>
+                      <li class="nav-item ms-4">
+                        <a class="nav-link" href="/HTML/about us.html">About us</a>
+                      </li>
+                      <li class="nav-item ms-4">
+                        <a class="nav-link" href="/HTML/contact.html">Contact us</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <a href="../HTML/login.html"><button type="button" class="btn btn-outline-success me-2">LOGIN</button></a>
+                      <a href="../HTML/sign up.html"><button type="button" class="btn btn-outline-dark" >SIGN UP</button></a>
+                    </form>
+                    <!--profile btn-->
+                    <div class="d-flex ">
+                      <button class="btn btn-sm ms-2" type="logo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" style="font-size: 25px;"><i class="bi bi-person-circle"></i></button>
+                      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+                        <div class="offcanvas-header">
+                          <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Wellcome !</h5>
+                          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                          <p>.....</p>
+                        </div>
+                      </div>
+    
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <!-- contact page-->
+    <div class="container  shadow" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-4 bg-primary p-5 text-black">
+               <h2>let's get in touch</h2>
+               <p style="font-size: 20px;">We're open for suggestion or just to have chat</p>
+               <div class="d-flex mt-2">
+                <i class="bi bi-geo-alt"style="font-size: 30px;"></i>
+                <p class="mt-1 ms-3" style="font-size: 20px;">MA Bikers <br>14-b,East Tambaram,Main road <br>chegalupatu,603306</p>
+               </div>
+               <div class="d-flex mt-2">
+                <i class="bi bi-telephone-forward"style="font-size: 30px;"></i>
+                <p class="mt-2 ms-3" style="font-size: 20px;">+91 9361318059</p>
+               </div>
+               <div class="d-flex mt-2">
+                <i class="bi bi-envelope"style="font-size: 30px;"></i>
+                <p class="mt-2 ms-3" style="font-size: 20px;">mathanmega03@gmail.com</p>
+               </div>
+               <div class="d-flex mt-2">
+                <i class="bi bi-instagram" style="font-size: 30px;"></i>
+                <p class="mt-2 ms-3" style="font-size: 20px;">MA__Bikers</p>
+               </div>
+            </div>
+            <div class="col-md-8 p-5">
+                <h2>Get in touch</h2>
+                <form class="row g-3 contactform mt-4">
+                    <div class="col-md-6">
+                      <label for="fname" class="form-label">User Name</label>
+                      <input type="text" class="form-control" id="fname">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="lname" class="form-label">time to Contect</label>
+                      <p id="lname" class="form-control">7.Am to 7.Pm</p>                </div>
+                    <div class="col-12">
+                      <label for="sub" class="form-label">MESSAGE</label>
+                      <input type="text" class="form-control" id="sub">
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress2" class="form-label">Email Id</label>
+                      <input type="email" class="form-control" id="mail">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputCity" class="form-label">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="mobno" class="form-label">Contact Number</label>
+                      <input type="number" class="form-control" id="mobno">
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary mt-3">Sumbit</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+
+                <!--footer-->
+                
+                <footer class="bg-dark text-white pt-4 pb-3 mt-1 sticky-bottom-0 mt-3">
+                  <div class="container text-center text-md-left">
+       
+                        <!--company-->             
+                        
+                    <div class="row text-center text-md-left">
+                      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto  mt-3">
+      
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">company</h5>
+                        <p>
+                          <a href="/HTML/about us.html" class="text-white" style="text-decoration: none;">About us</a>
+                        </p>
+                        <p>
+                          <a href="/HTML/contact.html" class="text-white" style="text-decoration: none;">Contact us</a>
+                        </p>
+                      </div>
+      
+                      <!--policy-->
+                         
+      
+                      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">policies</h5>
+                        <p>
+                          <a href="/HTML/terms.html" class="text-white" style="text-decoration: none;">Privacy Policy</a>
+                        </p>
+                        <p>
+                          <a href="/HTML/terms.html" class="text-white" style="text-decoration: none;">Terms & Condition</a>
+                        </p>
+                      </div>
+      
+      
+      
+                      <!--downlode us-->
+      
+                      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">downlode our apps</h5>
+                        <p>
+                          <a href="#" class="text-white" style="text-decoration: none;"><img src="../IMAGE/footer image/google-play.jpg" width="100px" alt="image"></a>
+                        </p>
+                        <p>
+                          <a href="#" class="text-white" style="text-decoration: none;"><img src="../IMAGE/footer image/app-store.jpg" width="100px"  alt="image"></a>
+                        </p>
+                      </div>
+      
+                    </div>
+      
+                    <!--cpy right-->
+                    <hr class="mb-4">
+                    <div class="row align-items-center">
+                      <div class="col-md-7 col-lg-8 ">
+                        <p> &copy 2023 MA Bikers. All Rights Reserved.</p>
+                      </div>
+                      <!--follow us-->
+                          
+                      <div class="col-md-5 col-lg-4">
+                        <div class="text-center text-md-right">
+                          <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-youtube"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+      
+                    </div>
+                  </div>
+      
+                </footer>
+</body>
+</html>   

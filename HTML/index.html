@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bike rent</title>
+    <!--boostrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--css link-->
+    <link rel="stylesheet" href="../CSS/index.css">
+    <!--link icon boostrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body >
+          <!--Index navbar-->
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 fixed-top" style="opacity: 80%;">
+            <div class="container-fluid">
+              <a class="navbar-brand " href="/HTML/index.html"><b style="font-family: 'Courier New', Courier, monospace; font-size: larger;">MA Bikers</b></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item ms-4">
+                    <a class="nav-link active" aria-current="page" href="/HTML/index.html">Home</a>
+                  </li>
+                  <li class="nav-item ms-4">
+                    <a class="nav-link" href="\HTML\aboutus.html">About us</a>
+                  </li>
+                  <li class="nav-item ms-4">
+                    <a class="nav-link" href="/HTML/contact.html">Contact us</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <a href="../HTML/login.html"><button type="button" class="btn btn-outline-success me-2">LOGIN</button></a>
+                  <a href="../HTML/sign up.html"><button type="button" class="btn btn-outline-dark" >SIGN UP</button></a>
+                </form>
+                <!--profile btn-->
+                <div class="d-flex ">
+                  <button class="btn btn-sm ms-2" type="logo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" style="font-size: 25px;visibility: hidden;"><i class="bi bi-person-circle"></i></button>
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Wellcome !</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <p>.....</p>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+
+
+          <!--background image -->
+              <div class="image-container  ">
+                <img src="../IMAGE/home image/index new.jpg" alt="image" width="2000px" class="img-fluid ">
+                 
+               
+
+              
+              <!--ride now btn-->
+
+              <div class="container mt-4 mb-4 d-grid col-2">
+              <button class="btn btn-lg btn-primary" onclick="ridenow()">RIDE NOW</button>
+              </div>
+
+          <!--footer-->
+          <footer class="bg-dark text-white pt-4 pb-3  sticky-bottom-0">
+            <div class="container text-center text-md-left">
+ 
+                  <!--company-->             
+                  
+              <div class="row text-center text-md-left">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto  mt-3">
+
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">company</h5>
+                  <p>
+                    <a href="../HTML/aboutus.html" class="text-white" style="text-decoration: none;">About us</a>
+                  </p>
+                  <p>
+                    <a href="/HTML/contact.html" class="text-white" style="text-decoration: none;">Contact us</a>
+                  </p>
+                </div>
+
+                <!--policy-->
+                   
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">policies</h5>
+                  <p>
+                    <a href="/HTML/terms.html" class="text-white" style="text-decoration: none;">Privacy Policy</a>
+                  </p>
+                  <p>
+                    <a href="/HTML/terms.html" class="text-white" style="text-decoration: none;">Terms & Condition</a>
+                  </p>
+                </div>
+
+                <!--downlode us-->
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">downlode our apps</h5>
+                  <p>
+                    <a href="#" class="text-white" style="text-decoration: none;"><img src="../IMAGE/footer image/google-play.jpg" width="100px" alt="image"></a>
+                  </p>
+                  <p>
+                    <a href="#" class="text-white" style="text-decoration: none;"><img src="../IMAGE/footer image/app-store.jpg" width="100px"  alt="image"></a>
+                  </p>
+                </div>
+
+              </div>
+
+              <!--cpy right-->
+              <hr class="mb-4">
+              <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8 ">
+                  <p> &copy 2023 MA Bikers. All Rights Reserved.</p>
+                </div>
+                <!--follow us-->
+                    
+                <div class="col-md-5 col-lg-4">
+                  <div class="text-center text-md-right">
+                    <ul class="list-unstyled list-inline">
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-facebook"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-instagram"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-twitter"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white" style="font-size: 30px;"><i class="bi bi-youtube"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </footer>
+        </div>    
+        </body>
+
+        <script>
+          function ridenow(){
+              
+            window.location.href="bike.html"
+
+          }
+        </script>
+        </html>

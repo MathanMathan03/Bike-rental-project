@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>worker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha184-EVSTQN1/azprG1Anm1QDgpJLIm9Nao0Yz1ztcQTwFspd1yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha184-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+       <!--link icon boostrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="row" style="height: 15%;background-color: rgb(27, 166, 190);"></div>
+    <div class="row" >
+       
+        <div class="form-floating mt-1 ms-4 col-4" >
+            <input type="email" class="form-control" id="pincode" placeholder="">
+            <label for="pincode" class="ms-2">Pin Code</label>
+          </div>
+        <div class="form-floating mt-1 ms-4 col-4" >
+            <input type="date" class="form-control" id="date" placeholder="">
+            <label for="pincode" class="ms-2">Date</label>
+          </div>
+          
+        
+          <div class="form-floating col-2 mt-1">
+            <button class="btn btn-outline-success" style="height: 60px; width: 110px;" onclick="workcheck()">Work Check</button>
+            <button class="btn btn-outline-danger mt-1 " style="height: 60px; width: 110px;" onclick="clr()">Clear</button>
+          </div>
+          <hr class="mt-1">
+          <div id="showuser"></div>
+          
+        </div>
+        </div>
+    
+  
+
+    <script>
+        function workcheck(){
+            var apiurl='https://retoolapi.dev/jmFjL0/service'
+            var pincode = document.getElementById('pincode').value;
+            var date = document.getElementById('date').value;
+            fetch(apiurl+"?postcode="+pincode+'&startdate='+date)
+            .then((response)=>{
+                return response.json();
+                })
+                .then((data)=>checking(data))
+
+                        
+        
+
+    }
+    function checking(data){
+      console.log(data)
+        var result='';
+       
+          
+
+          
+          for( let x of data){
+            var name=x.name;
+            var email=x.email;
+            var phone=x.phone;
+            var state=x.state;
+            var country=x.country;
+            var district=x.district;
+            var postcode=x.postcode;
+            var companyname=x.companyname;
+            var startdate=x.startdate;
+            var enddate=x.enddate;
+            var bike=x.product;
+            var address=x.streetaddress;
+            result+='<table class="table" style="background-color: rgb(197, 218, 218); width: 700px; margin-left: 400px;" ><tr class="row"><td class="col-4"></td><td class="col-4  "><h1 style="margin-left: 50px;">'+name+'</h1></td><td  class="col-4"></td> </tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">START-DATE</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+startdate+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">END-DATE</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+enddate+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">EMAIL</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+email+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">STATE</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+state+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">COUNTRY</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+country+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">DISTRICT</h5></td> <td class="col-1  "></td><td  class="col-4"><h5 >'+district+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">PINCODE</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+postcode+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">ADDRESS</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+address+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">COMPANY NAME</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+companyname+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">BIKE </h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+bike+'</h5></td></tr><tr class="row"><td class="col-4 ms-5"><h5 style="margin-left: 20px;">PHONE NUMBER</h5></td><td class="col-1  "></td><td  class="col-4"><h5 >'+phone+'</h5></td></tr></table>'
+          }
+
+
+          
+            
+           
+            document.getElementById('showuser').innerHTML=result;
+          
+
+        
+        
+
+        console.log(result)
+        
+
+    }
+    function clr(){
+      location.reload()
+
+    }
+
+        
+       
+
+    </script>
+
+    
+</body>
+</html>

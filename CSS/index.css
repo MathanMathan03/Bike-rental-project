@@ -1,0 +1,7 @@
+.navbar-nav a.nav-link{
+    transform: scale(1); 
+    transition: transform 0.3s;
+}
+.navbar-nav a.nav-link:hover{
+    transform:scale(1.1) ;
+}

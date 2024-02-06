@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<body>
+    <style>
+        #logbx{
+            width: 450px;
+            height:550px;
+            border:15px solid rgb(35, 35, 35);
+            border-top-right-radius: 50px;
+            border-bottom-left-radius:50px;
+            border-top-color:yellow;
+            border-bottom-color:yellow;
+            border-left-color:yellow;
+            border-right-color:yellow;
+            margin-top: 160px;
+            margin-left: 450px;
+            
+        
+    
+        }
+        #signup{
+            font-size:25px;
+            color:rgb(0, 0, 0);
+            text-align:center;
+            justify-content: center;
+            margin-left: 100px;
+            
+        }
+    </style>
+    <body>
+            <div id="logbx">
+                <h1 class="text-center text-info mt-2" >SIGN UP</h1>
+                <div class="form-group">
+                <div class="row mt-3 mx-4 ">
+                   <div class="col "><input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
+                    <div class="col mt-2 "><input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+                    <div class="col mt-2 "><input type="number" class="form-control" name="mobno" id="mobno" placeholder="Mobile Number(10 digits)">
+                    <div class="col mt-2 "><input type="email" class="form-control" name="mail" id="mail" placeholder="Email Address">
+                    <div class="col mt-2 "><input type="text" class="form-control" name="password" id="password" placeholder="password">
+                    <div class="col mt-2 "><input type="text" class="form-control" name="password" id="cpassword" placeholder="Confirm password" onkeyup="confirmpass()">
+                    </div>
+                    <div class="row mt-4">                  
+                    <div class="col "><button class="btn btn-success btn-lg " id="signup" onclick="sign()">Sign Up</button></div>
+                    <a href="/HTML/login.html" style="margin-left: 80px;text-decoration: none;"><p>Already I Have a Account</p></a>
+                    </div>            
+                </div> 
+                <script>
+                    var apiurl="https://retoolapi.dev/Yb0ZQB/userdata"
+
+                    function confirmpass(){
+                        if(document.getElementById('password').value === document.getElementById('cpassword').value)
+                        alert('password matched')
+                    }
+
+                    function getInput(){
+                        let fname=document.getElementById('fname').value;
+                        let lname=document.getElementById('lname').value;
+                        let mobno=document.getElementById('mobno').value;
+                        let mail=document.getElementById('mail').value;
+                        let password=document.getElementById('password').value;
+
+                        return{
+                            "fname":fname,
+                            "lname":lname,
+                            "mobno":mobno,
+                            "mail":mail,
+                            "password":password
+                        }
+                    }
+                    function sign(){
+                            fetch(apiurl,{
+                               method:'POST',
+                               body:JSON.stringify(getInput()),
+                               headers:{
+                                'content-type':'application/json'
+                               }
+                           }).then((Response)=>{
+                            if(Response.ok){
+                                alert('signup successful')
+                                console.log(Response.json());
+                                window.location.href="login.html"
+                            }else{
+                                throw new Error('Error:');
+                            }
+                           }).catch((err)=>{
+                             alert("Error"+err.message)
+                           })
+                        }
+                </script>
+</body>
+</html>

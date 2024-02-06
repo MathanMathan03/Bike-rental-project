@@ -1,0 +1,60 @@
+.card-body{
+    border: 1px solid gray;
+  }
+
+.card-img-top{
+    border: 1px solid gray;
+    border-bottom: none; 
+}
+/* profile design */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  padding: 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.username {
+  margin-top: 10px;
+}
+
+.user-bio {
+  font-style: italic;
+}
+
+.profile-details {
+  padding: 20px;
+}
+
+.detail {
+  margin-bottom: 15px;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.detail-value {
+  margin-left: 10px;
+}
+.bi  {
+  display: inline-block;
+  vertical-align: -0.125em;
+  fill: currentcolor;
+}

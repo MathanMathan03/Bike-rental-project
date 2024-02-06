@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking details</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+ <style>
+    #dummy{
+      width: 500px;
+      height: 310px;
+      background-color:antiquewhite ;
+      line-height:60px;
+      font-size: larger;
+      font-weight: bolder;
+      margin-top: 100px;
+    }
+ </style>
+<body>
+     <!-- booking show id -->
+      <div id="fill"></div>
+      
+      <div class="btn btn-danger" onclick="alldata()">Click</div>
+     <script>
+        function alldata(){
+            var alldetails='https://retoolapi.dev/jmFjL0/service';
+            fetch(alldetails)
+            .then((Response)=>{
+                if(Response.ok){
+                    return Response.json(); 
+                }else{
+                    throw new Error('not response')
+                }
+            }).then((data)=>correct(data))
+              .catch((err)=>{
+                console.log('ERROR:'+err.message);
+              })
+            }
+              function correct(data){
+                let result='';
+               //console.log(data)
+               for(let x of data){
+              var  mail=x.email;
+              var  product=x.product;
+              var  stdate=x.startdate;
+              var  eddate=x.enddate;
+              //var fulldata=mail+product+stdate+eddate
+               // console.log(fulldata);
+               result+='<div class="container" id="dummy"><div class="row"><hr><div class="col ms-4">Email:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+mail+'</span></div><hr></div><div class="row"><div class="col ms-4">Product:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+product+'</span></div><hr></div><div class="row"><div class="col ms-4">StartDate:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+stdate+'</span></div><hr></div><div class="row"><div class="col ms-4">Enddate:<span class="ms-4" style="color: rgb(255, 0, 0); font-weight:500;font-style:oblique;">'+eddate+'</span></div><hr></div></div>'
+               }
+                document.getElementById('fill').innerHTML=result;
+               }
+              
+     </script>
+</body>
+</html>
